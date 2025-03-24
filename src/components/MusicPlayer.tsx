@@ -1,15 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Music, Pause, Play } from "lucide-react";
 import useSound from "use-sound";
+import { triggerConfetti } from "../utils/confetti";
 
 export const MusicPlayer = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [play, { pause }] = useSound("perfect.mp3", {
 		volume: 0.5,
-		onend: () => setIsPlaying(false),
+		loop: true,
+		// onend: () => setIsPlaying(false),
 	});
 
-	const togglePlay = () => {
+	useEffect(() => {
+		const handleClick = (event: MouseEvent) => {
+			if (
+				!(event.target as HTMLElement).closest(".music-player-btn") &&
+				!isPlaying
+			) {
+				play();
+				setIsPlaying(true);
+			}
+			triggerConfetti();
+		};
+
+		window.addEventListener("click", handleClick);
+		return () => window.removeEventListener("click", handleClick);
+	}, [isPlaying, play]);
+
+	const togglePlay = (event: MouseEvent) => {
+		event.stopPropagation();
 		if (isPlaying) {
 			pause();
 		} else {
@@ -23,7 +42,7 @@ export const MusicPlayer = () => {
 			<button
 				onClick={togglePlay}
 				type="button"
-				className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg
+				className="music-player-btn bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg
                  hover:bg-rose-50 transition-all duration-300
                  group flex items-center gap-2"
 			>
