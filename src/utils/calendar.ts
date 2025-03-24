@@ -2,10 +2,10 @@ export const generateCalendarEvent = () => {
 	const event = {
 		title: "Wedding of Shremal & Himanshu",
 		description: "Join us in celebrating our special day!",
-		startDate: "20260206T000000Z",
-		endDate: "20260207T000000Z",
+		startDate: "20260206T053000Z",
+		endDate: "20260206T103000Z",
 		location: "Location to be announced",
-		uid: "wedding-shre-himanshu-2026",
+		uid: "wedding-shremal-himanshu-2026",
 		dtstamp: new Date().toISOString().replace(/[-:.]/g, "").slice(0, 15) + "Z",
 	};
 
@@ -26,7 +26,7 @@ END:VCALENDAR`;
 	const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
 	const link = document.createElement("a");
 	link.href = URL.createObjectURL(blob);
-	link.download = "wedding-save-the-date.ics";
+	link.download = "shremal-himanshu-wedding-save-the-date.ics";
 
 	// Try webcal:// for direct calendar open
 	const webcalLink = `webcal://example.com/wedding-save-the-date.ics`;

@@ -56,7 +56,9 @@ function App() {
                             transform hover:scale-105 transition-transform duration-300"
 							>
 								<Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
-								<span className="font-light">February 6th, 2026</span>
+								<span className="font-light">
+									6<sup>th</sup> February 2026
+								</span>
 							</div>
 
 							{/* <CountdownTimer /> */}
