@@ -1,4 +1,4 @@
-export const saveToCalendar = () => {
+export const generateCalendarEvent = () => {
 	const event = {
 		title: "Wedding of Shremal & Himanshu",
 		description: "Join us in celebrating our special day!",
