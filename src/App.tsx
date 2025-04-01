@@ -1,13 +1,26 @@
-import React from "react";
-import { Calendar, MapPin } from "lucide-react";
+import React, { useEffect } from "react";
+import { Calendar } from "lucide-react";
 import { HeroImage } from "./components/HeroImage";
 import { SaveDateButton } from "./components/SaveDateButton";
 import { DecorativeSparkles } from "./components/DecorativeSparkles";
 // import { CountdownTimer } from "./components/CountdownTimer";
 import { MusicPlayer } from "./components/MusicPlayer";
 import { generateCalendarEvent } from "./utils/calendar";
+import { triggerConfetti } from "./utils/confetti";
 
 function App() {
+	useEffect(() => {
+		triggerConfetti();
+
+		const timeout = setInterval(() => {
+			triggerConfetti();
+		}, 4000);
+
+		return () => {
+			clearInterval(timeout);
+		};
+	}, []);
+
 	return (
 		<div
 			className="min-h-screen relative overflow-hidden  bg-white 

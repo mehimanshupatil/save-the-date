@@ -5,9 +5,14 @@ export const HeroImage = () => {
 	return (
 		<div className="relative">
 			<div
-				className="h-48 sm:h-64 md:h-80 bg-cover bg-bottom transition-all duration-700 ease-out hover:scale-105"
+				className="h-48 sm:h-64 md:h-80 transition-all duration-700 ease-out hover:scale-105"
 				style={{
-					backgroundImage: `url('/tomoko-uji-kxvn1ogpTtE-unsplash.jpg')`,
+					// backgroundImage: `url('/tomoko-uji-kxvn1ogpTtE-unsplash.jpg')`,
+					backgroundImage: ` url('/potrait.jpeg'),url('/tomoko-uji-kxvn1ogpTtE-unsplash.jpg')`,
+					backgroundSize: "contain, cover",
+					backgroundRepeat: "no-repeat",
+					backgroundPosition: "center",
+					backgroundBlendMode: "darken",
 				}}
 			>
 				{/* Photo by{" "}
@@ -18,7 +23,7 @@ export const HeroImage = () => {
 				<a href="https://unsplash.com/photos/pink-and-white-flowers-under-white-sky-during-daytime-kxvn1ogpTtE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
 					Unsplash
 				</a> */}
-				<div className="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent" />
+				{/* <div className="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent" /> */}
 			</div>
 
 			<div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
