@@ -1,6 +1,8 @@
 .curtainItems {
+    position: fixed;
     height: 100%;
-    width: 0;
+    width: 100%;
+    z-index: 99;
     --size: 50%;
 
     .curtainItem {
@@ -50,15 +52,15 @@
     }
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
     .curtainItems {
         .curtainItem {
             &.start {
-                --translateX: -150px;
+                --translateX: -120px;
             }
 
             &.end {
-                --translateX: 150px;
+                --translateX: 120px;
             }
         }
 

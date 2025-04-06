@@ -7,17 +7,11 @@ import { DecorativeSparkles } from "./components/DecorativeSparkles";
 import { MusicPlayer } from "./components/MusicPlayer";
 import { generateCalendarEvent } from "./utils/calendar";
 import { Curtains } from "./components/Curtains";
- 
-function App() {
- 
-	return (<>		
-		<Curtains/> 
 
-		<div
-			className="min-h-screen relative overflow-hidden  bg-white 
-                     after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur-[100px]"
-		>
-			
+function App() {
+	return (
+		<>
+			<Curtains />
 			<div className="relative z-10 min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
 				<div
 					className="max-w-sm sm:max-w-md md:max-w-2xl w-full bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden 
@@ -82,7 +76,6 @@ function App() {
 				</div>
 			</div>
 			<MusicPlayer />
-		</div>
 		</>
 	);
 }
