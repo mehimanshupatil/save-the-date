@@ -38,7 +38,7 @@ export const MusicPlayer = () => {
 	};
 
 	return (
-		<div className="absolute bottom-4 right-[50%] translate-x-[50%] z-50">
+		<div className=" z-50">
 			<button
 				onClick={togglePlay}
 				type="button"

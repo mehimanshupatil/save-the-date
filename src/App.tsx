@@ -12,7 +12,7 @@ function App() {
 	return (
 		<>
 			<Curtains />
-			<div className="relative z-10 min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
+			<div className="relative z-10 min-h-screen flex items-center flex-col gap-4 justify-center p-4 sm:p-6 md:p-8">
 				<div
 					className="max-w-sm sm:max-w-md md:max-w-2xl w-full bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden 
                       transform hover:scale-[1.02] transition-all duration-500 ease-out
@@ -74,8 +74,8 @@ function App() {
 
 					<div className="h-2 bg-gradient-to-r from-rose-300 via-rose-400 to-pink-500" />
 				</div>
+				<MusicPlayer />
 			</div>
-			<MusicPlayer />
 		</>
 	);
 }
