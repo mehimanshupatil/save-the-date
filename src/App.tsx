@@ -6,26 +6,17 @@ import { DecorativeSparkles } from "./components/DecorativeSparkles";
 // import { CountdownTimer } from "./components/CountdownTimer";
 import { MusicPlayer } from "./components/MusicPlayer";
 import { generateCalendarEvent } from "./utils/calendar";
-import { triggerConfetti } from "./utils/confetti";
-
+import { Curtains } from "./components/Curtains";
+ 
 function App() {
-	useEffect(() => {
-		triggerConfetti();
+ 
+	return (<>			<Curtains/> 
 
-		const timeout = setInterval(() => {
-			triggerConfetti();
-		}, 4000);
-
-		return () => {
-			clearInterval(timeout);
-		};
-	}, []);
-
-	return (
 		<div
 			className="min-h-screen relative overflow-hidden  bg-white 
                      after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur-[100px]"
 		>
+			
 			<div className="relative z-10 min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
 				<div
 					className="max-w-sm sm:max-w-md md:max-w-2xl w-full bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden 
@@ -91,6 +82,7 @@ function App() {
 			</div>
 			<MusicPlayer />
 		</div>
+		</>
 	);
 }
 

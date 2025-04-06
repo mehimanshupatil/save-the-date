@@ -1,0 +1,66 @@
+.curtainItems {
+    height: 100%;
+    --size: 50%;
+
+    .curtainItem {
+        z-index: 99;
+        width: var(--size);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        transition: all 1.5s ease-in-out;
+        height: 100%;
+
+        &.start {
+            --translateX: -40px;
+            left: 0;
+            transform-origin: left;
+            background: linear-gradient(270deg, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b 99%);
+
+            &.animate {
+                transform: skew(-3.5deg) scaleX(.35) translate(var(--translateX))
+            }
+        }
+
+        &.end {
+            --translateX: 40px;
+            right: 0;
+            transform-origin: right;
+            background: linear-gradient(270deg, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b, #c83852, #91283b 99%);
+
+            &.animate {
+                transform: skew(3.5deg) scaleX(.35) translate(var(--translateX))
+            }
+
+        }
+    }
+
+    .button {
+        z-index: 99;
+        position: absolute;
+        top: 50%;
+        height: min-content;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &.hide {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .curtainItems {
+        .curtainItem {
+            &.start {
+                --translateX: -150px;
+            }
+
+            &.end {
+                --translateX: 150px;
+            }
+        }
+
+    }
+
+}

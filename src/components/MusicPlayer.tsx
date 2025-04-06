@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Music, Pause, Play } from "lucide-react";
 import useSound from "use-sound";
+import { triggerConfetti } from "../utils/confetti";
 
 export const MusicPlayer = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -19,6 +20,7 @@ export const MusicPlayer = () => {
 				play();
 				setIsPlaying(true);
 			}
+			triggerConfetti();
 		};
 
 		window.addEventListener("click", handleClick);

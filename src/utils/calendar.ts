@@ -31,20 +31,15 @@ END:VCALENDAR`;
 	// Try webcal:// for direct calendar open
 	const webcalLink = `webcal://example.com/wedding-save-the-date.ics`;
 
-	// Google Calendar link (alternative)
-	const googleLink = `https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(event.title)}&dates=${event.startDate}/${event.endDate}&details=${encodeURIComponent(event.description)}&location=${encodeURIComponent(event.location)}`;
-
+	 
 	// Check platform and decide behavior
-	if (
-		navigator.userAgent.includes("Android") ||
+	if ( 
 		navigator.userAgent.includes("iPhone")
 	) {
 		// Mobile - Try webcal or Google Calendar
 		if (navigator.userAgent.includes("iPhone")) {
 			window.location.href = webcalLink; // Webcal for iOS
-		} else {
-			window.open(googleLink, "_blank"); // Google Calendar for Android
-		}
+		} 
 	} else {
 		// Desktop - Download ICS file
 		document.body.appendChild(link);
