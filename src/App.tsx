@@ -10,7 +10,8 @@ import { Curtains } from "./components/Curtains";
  
 function App() {
  
-	return (<>			<Curtains/> 
+	return (<>		
+		<Curtains/> 
 
 		<div
 			className="min-h-screen relative overflow-hidden  bg-white 
